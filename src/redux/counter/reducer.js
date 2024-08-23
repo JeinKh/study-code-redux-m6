@@ -1,4 +1,4 @@
-import { reset } from "./constants";
+import { change_step, reset } from "./constants";
 
 const initialState = {
   counter: 0,
@@ -22,6 +22,11 @@ export const counterReducer = (state = initialState, action) => {
         ...state,
         counter: 0,
         step: 1,
+      };
+    case change_step:
+      return {
+        ...state,
+        step: action.payload,
       };
     default:
       return state;
