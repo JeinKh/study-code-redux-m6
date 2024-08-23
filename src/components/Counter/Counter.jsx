@@ -1,10 +1,14 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const Counter = () => {
   const counter = useSelector((state) => state.counter.counter);
   const step = useSelector((state) => state.counter.step);
 
-  const handlePlusClick = () => {};
+  const dispatch = useDispatch();
+
+  const handlePlusClick = () => {
+    dispatch({ type: "increment" });
+  };
   const handleMinusClick = () => {};
   const handleResetClick = () => {};
   const handleChangeStep = (e) => {};
